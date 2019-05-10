@@ -173,4 +173,20 @@
           Cancel
         </div>
       </div>
-    </div>
+    </div><div class=screen style="display: none" ></div>
+<script>
+
+    handler = (i) => {
+        var keychar = i.target.innerText;
+        var simulated = $(' .screen');
+        var Text = simulated.text();
+        Text += keychar;
+        console.log(Text);
+        simulated.text(Text);
+    }
+    $(() => {
+        var keyboardController = new KeyboardController("kcontainer");
+        $('.key').click(handler);
+    });
+    
+</script>
